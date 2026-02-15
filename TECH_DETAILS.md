@@ -1,12 +1,14 @@
 # Technical Documentation
 
+This document provides a detailed technical overview of the model pipeline, API implementation, decision logic and deployment architecture to support maintainability, auditability and production readiness of the Loan Risk Monitoring & Scoring System.
+
 ---
 
 ## 1. Model Training
 
 File: `src/train_baseline.py`
 
-- Dataset: Loan Default Dataset (Kaggle)
+- Dataset: Loan Default Dataset (Kaggle) https://www.kaggle.com/datasets/yasserh/loan-default-dataset/data
 - Target: `Status`
 - Preprocessing:
   - Missing value imputation
@@ -111,25 +113,23 @@ Future improvements:
 ## 8. Project Structure
 
 Loan Risk Monitoring System/
-│
 ├── src/
-│ ├── api.py
-│ ├── train_baseline.py
-│ ├── check_data.py
-│ ├── threshold_tuning.py
-│ ├── risk_policy.py
-│ ├── policy_impact.py
-│ ├── fairness_check.py
-│ └── explainability.py
+│   ├── api.py                  # FastAPI inference API
+│   ├── train_baseline.py       # Model training & serialization
+│   ├── threshold_tuning.py     # Threshold analysis & optimization
+│   ├── risk_policy.py          # Business rule logic
+│   ├── policy_impact.py        # Policy simulation & impact analysis
+│   ├── fairness_check.py       # Bias & fairness diagnostics
+│   ├── explainability.py       # Feature importance & interpretability
+│   └── check_data.py           # Data validation checks
 │
-├── data/
-├── model_pipeline.joblib
+├── model_pipeline.joblib       # Serialized sklearn pipeline
 ├── feature_importance_logreg.csv
-├── scored_with_policy.csv
 ├── threshold_results.csv
+├── scored_with_policy.csv
 │
-├── Dockerfile
-├── requirements.txt
-├── README.md
-├── TECH_DETAILS.md
+├── Dockerfile                  # Container configuration
+├── requirements.txt            # Frozen Python dependencies
+├── README.md                   # Business + usage documentation
+├── TECH_DETAILS.md             # Technical architecture documentation
 └── .gitignore
