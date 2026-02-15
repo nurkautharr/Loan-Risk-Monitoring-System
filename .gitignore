@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 data/
-*.csv
-threshold_results.csv
-scored_with_policy.csv
-feature_importance_logreg.csv
+.env
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
