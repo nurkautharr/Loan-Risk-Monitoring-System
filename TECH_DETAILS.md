@@ -107,3 +107,14 @@ Future improvements:
 - Authentication & rate limiting
 - Logging & audit trail
 - CI/CD integration
+
+---
+
+## 8. Tech Stack
+
+- Python
+- scikit-learn
+- Render (FastAPI)
+- Streamlit (Cloud deployment)
+- Virtual Studio Code
+- GitHub

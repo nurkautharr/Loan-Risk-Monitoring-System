@@ -2,14 +2,25 @@
 
 Production-ready Credit Risk Scoring API built using FastAPI and Logistic Regression.
 
-This project simulates how financial institutions operationalize Probability of Default (PD) models into automated lending decision systems.
+This project simulates how financial institutions operationalize Probability of Default (PD) models into automated lending decision systems. The architecture reflects real-world enterprise delivery used in banks and fintech environments. The system includes:
+
+- Probability of Default (PD) modeling
+- Risk-based approval policy (Approve / Manual Review / Reject)
+- Expected Loss estimation
+- Portfolio-level monitoring dashboard
+- Cloud deployment and API-based model serving
 
 ---
 
-## 🌐 Live API
+## 🌐 Live Demo
 
-Swagger Documentation:
-👉 https://loan-risk-api-ecg4.onrender.com/docs
+**🔗 Live Risk Scoring API (FastAPI - Render)**  
+https://loan-risk-api-ecg4.onrender.com/docs  
+
+**📊 Live Risk Monitoring Dashboard (Streamlit)**  
+https://loan-risk-monitoring-system.streamlit.app
+
+> The dashboard calls the production API in real time and returns PD, decision outcomes and expected loss calculations.
 
 ---
 
@@ -59,15 +70,17 @@ Where:
 
 ## 🏗 Architecture
 
-Client  
-↓  
-FastAPI  
-↓  
-Serialized ML Pipeline (joblib)  
-↓  
-Business Decision Rules  
-↓  
-JSON Response  
+User (Browser)
+    ↓
+Streamlit Dashboard (Cloud)
+    ↓
+FastAPI Risk API (Render Cloud)
+    ↓
+Scikit-learn Model Pipeline
+    ↓
+Business Policy Engine (Threshold Logic)
+    ↓
+JSON Response
 
 ---
 
@@ -77,3 +90,9 @@ JSON Response
 - Fairness diagnostics across demographic groups
 - Dependency freezing for reproducibility
 - Health endpoint for monitoring
+
+---
+
+## 📸 Dashboard Preview
+
+![alt text](image.png)
